@@ -8,16 +8,10 @@ var config = {
   webpack: require('./webpack.config'),
 
   rsync: {
-    most: {
+    dev: {
       hostname: '',
       username: '',
       destination: '',
-      progress: true
-    },
-    redis: {
-      hostname: 'redis.tv',
-      username: 'tele2moskow',
-      destination: 'www/moscow_promo_redis_tv',
       progress: true
     },
     prod: {
@@ -47,9 +41,9 @@ gulp.task('server', function(callback) {
     hot: true,
     proxy: {
       '/api/*': {
-        target: 'http://zatele2.mostcreativeclub.ru/',
+        target: '',
         headers: {
-          'HOST': 'zatele2.mostcreativeclub.ru'
+          'HOST': ''
         }
       }
     }
@@ -63,14 +57,9 @@ gulp.task('server', function(callback) {
   });
 });
 
-gulp.task('deploy:most', ['build'], function() {
+gulp.task('deploy:dev', ['build'], function() {
   gulp.src(['./build/*', './index.html'])
-    .pipe(rsync(config.rsync.most));
-});
-
-gulp.task('deploy:redis', ['build'], function() {
-  gulp.src(['./build/*', './index.html'])
-    .pipe(rsync(config.rsync.redis));
+    .pipe(rsync(config.rsync.dev));
 });
 
 gulp.task('deploy:prod', ['build'], function() {
