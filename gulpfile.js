@@ -57,12 +57,9 @@ gulp.task('server', function(callback) {
   });
 });
 
-gulp.task('deploy:dev', ['build'], function() {
-  gulp.src(['./build/*', './index.html'])
-    .pipe(rsync(config.rsync.dev));
-});
-
-gulp.task('deploy:prod', ['build'], function() {
-  gulp.src(['./build/*', './index.html'])
-    .pipe(rsync(config.rsync.prod));
-});
+for (var host in config.rsync) {
+  gulp.task('rsync:' + host, ['build'], function() {
+    gulp.src(['./build/*', './videos/*', './index.html'])
+      .pipe(rsync(config.rsync[host]));
+  });
+}
