@@ -7,17 +7,19 @@ var config = {
   webpack: require('./webpack.config'),
 
   rsync: {
+    files: [
+      './build/*',
+      './index.html'
+    ],
     dev: {
       hostname: '',
       username: '',
-      destination: '',
-      progress: true
+      destination: ''
     },
     prod: {
       hostname: '',
       username: '',
-      destination: '',
-      progress: true
+      destination: ''
     }
   }
 };
@@ -32,9 +34,14 @@ gulp.task('build', function(callback) {
   });
 });
 
-for (var host in config.rsync) {
-  gulp.task('rsync:' + host, ['build'], function() {
-    gulp.src(['./build/*', './videos/*', './index.html'])
-      .pipe(rsync(config.rsync[host]));
-  });
+for (var _host in config.rsync) {
+  if (_host == 'files') {
+    continue;
+  }
+  (function(host) {
+    gulp.task('rsync:' + host, ['build'], function() {
+      gulp.src(config.rsync.files)
+        .pipe(rsync(config.rsync[host]));
+    });
+  }(_host));
 }
