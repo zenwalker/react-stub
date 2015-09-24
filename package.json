@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint index.js components",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "NODE_ENV=development webpack-dev-server --progress",
+    "server": "NODE_ENV=development webpack-dev-server --port 3000 --progress",
     "build": "NODE_ENV=production webpack --colors"
   },
   "license": "ISC",
