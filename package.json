@@ -2,14 +2,17 @@
   "name": "react-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app/index.js",
   "private": true,
   "scripts": {
     "lint": "eslint index.js components",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "NODE_ENV=development webpack-dev-server --progress",
+    "build": "NODE_ENV=production webpack --colors"
   },
   "license": "ISC",
   "dependencies": {
+    "lodash": "^3.10.1",
     "react": "^0.13.3"
   },
   "devDependencies": {
@@ -22,6 +25,7 @@
     "gulp": "^3.9.0",
     "gulp-rsync": "0.0.5",
     "gulp-util": "^3.0.6",
+    "html-webpack-plugin": "^1.6.1",
     "json-loader": "^0.5.2",
     "node-libs-browser": "^0.5.2",
     "postcss-loader": "^0.5.1",

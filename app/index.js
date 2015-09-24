@@ -1,8 +1,9 @@
 import React from 'react';
+import HelloWorld from './components/HelloWorld';
 
-var App = React.createClass({
+const App = React.createClass({
   render() {
-    return <h1>It works!</h1>;
+    return <HelloWorld />;
   }
 });
 
