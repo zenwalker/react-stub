@@ -29,7 +29,6 @@ module.exports = function(dirname) {
       }),
       new HtmlPlugin({
         template: path.join(dirname, 'app/index.html'),
-        title: 'Rambler Webpack Dev Boilerplate',
         chunks: ['app', 'vendor'],
         filename: 'index.html'
       })
