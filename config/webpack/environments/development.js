@@ -10,6 +10,12 @@ module.exports = function(dirname) {
   };
 
   return {
+    module: {
+      loaders: [
+        { test: /\.styl$/, loaders: ['style', 'css', 'postcss', 'stylus'] },
+        { test: /\.css$/, loaders: ['style', 'css'] },
+      ]
+    },
     devServer: {
       historyApiFallback: true,
       inline: true,

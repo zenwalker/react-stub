@@ -8,7 +8,7 @@
     "lint": "eslint index.js components",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "NODE_ENV=development webpack-dev-server --port 3000 --progress",
-    "build": "NODE_ENV=production webpack --colors"
+    "build": "NODE_ENV=production webpack --colors --progress"
   },
   "license": "ISC",
   "dependencies": {
@@ -21,6 +21,7 @@
     "babel-loader": "^5.3.2",
     "css-loader": "^0.15.5",
     "eslint-plugin-react": "^3.2.3",
+    "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
     "gulp": "^3.9.0",
     "gulp-rsync": "0.0.5",
