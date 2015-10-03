@@ -39,7 +39,7 @@ module.exports = function(dirname) {
         }
       }),
       new HtmlPlugin({
-        template: path.join(dirname, 'app/index.html'),
+        template: path.join(dirname, 'app', 'index.html'),
         chunks: ['app', 'vendor'],
         filename: 'index.html'
       })
@@ -49,8 +49,8 @@ module.exports = function(dirname) {
     ],
     stylus: {
       import: [
-        path.join(dirname, 'app/styles/variables.styl'),
-        path.join(dirname, 'app/styles/mixins.styl')
+        path.join(dirname, 'app', 'styles', 'variables.styl'),
+        path.join(dirname, 'app', 'styles' , 'mixins.styl')
       ]
     }
   }
