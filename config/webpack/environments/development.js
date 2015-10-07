@@ -6,6 +6,14 @@ module.exports = function(dirname) {
       '/api/*': {
         target: 'http://localhost:8000'
       }
+    },
+    dev: {
+      '/api/*': {
+        target: 'http://example.com',
+        headers: {
+          'HOST': 'example.com'
+        }
+      }
     }
   };
 
@@ -18,6 +26,7 @@ module.exports = function(dirname) {
     },
     devServer: {
       historyApiFallback: true,
+      // proxy: proxy.local,
       inline: true,
       info: true,
       hot: true
