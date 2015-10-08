@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import HelloWorld from './components/HelloWorld';
 
 const App = React.createClass({
@@ -8,5 +9,5 @@ const App = React.createClass({
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  React.render(<App />, document.body);
+  ReactDOM.render(<App />, document.getElementById('app'));
 });
