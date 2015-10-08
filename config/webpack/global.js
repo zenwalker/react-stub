@@ -27,7 +27,7 @@ module.exports = function(dirname) {
         { test: /\.js$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
         { test: /\.(jpg|png|woff)$/, loader: 'url?limit=10000' },
         { test: /\.svg$/, loaders: ['react-svgdom', 'svgo'] },
-        { test: /.json$/, loader: 'json' }
+        { test: /\.json$/, loader: 'json' }
       ]
     },
     plugins: [
