@@ -13,7 +13,9 @@ module.exports = function(dirname) {
       ]
     },
     plugins: [
-      new TextPlugin('styles.css'),
+      new TextPlugin('[name].css', {
+        allChunks: true
+      }),
       new webpack.optimize.UglifyJsPlugin({
         compress: { warnings: false },
         output: { comments: false }
