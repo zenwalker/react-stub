@@ -6,7 +6,6 @@ var HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = function(dirname) {
   var vendor = Object.keys(require(dirname + '/package').dependencies);
-  vendor.push('babel-core/polyfill');
 
   return {
     context: dirname,
