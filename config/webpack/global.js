@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var extend = require('util')._extend;
-var autoprefixer = require('autoprefixer-core');
+var autoprefixer = require('autoprefixer');
 var HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = function(dirname) {
