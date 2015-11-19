@@ -40,7 +40,8 @@ module.exports = function(dirname) {
       new HtmlPlugin({
         template: path.join(dirname, 'app', 'index.html'),
         chunks: ['app', 'vendor'],
-        filename: 'index.html'
+        filename: 'index.html',
+        inject: true
       })
     ],
     postcss: [
