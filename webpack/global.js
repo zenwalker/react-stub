@@ -15,7 +15,7 @@ module.exports = function(dirname) {
     },
     output: {
       path: path.join(dirname, 'build'),
-      filename: 'bundle.js'
+      filename: '[name].js'
     },
     resolve: {
       root: dirname,
@@ -30,7 +30,7 @@ module.exports = function(dirname) {
       ]
     },
     plugins: [
-      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
       new webpack.NoErrorsPlugin(),
       new webpack.DefinePlugin({
         'process.env': {

@@ -1,9 +1,9 @@
 var _ = require('lodash');
 
 var configs = {
-  global: require(__dirname + '/config/webpack/global'),
-  production: require(__dirname + '/config/webpack/environments/production'),
-  development: require(__dirname + '/config/webpack/environments/development')
+  global: require(__dirname + '/webpack/global'),
+  production: require(__dirname + '/webpack/environments/production'),
+  development: require(__dirname + '/webpack/environments/development')
 };
 
 var load = function(enviroment) {
