@@ -3,8 +3,6 @@
 [![](https://david-dm.org/redisca/react-stub.svg)](https://david-dm.org/redisca/react-stub)
 [![](https://david-dm.org/redisca/react-stub/dev-status.svg)](https://david-dm.org/redisca/react-stub#info=devDependencies&view=table)
 
-Based on [rambler-webpack-boilerplate][1]
-
 ## How to run
 
 ```bash
