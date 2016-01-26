@@ -27,11 +27,21 @@ configs.global = (dirname) => {
       extensions: ['', '.js', '.jsx'],
     },
     module: {
+      preLoaders: [
+        { test: /\.svg/, loader: 'svgo' },
+      ],
       loaders: [
+        { test: /\.svg$/, loader: 'react-svgdom' },
+        { test: /\.(jpg|png|ttf|woff|woff2|gif)$/, loader: 'url?limit=10000' },
+        { test: /\.(mp4|webm|ogv|mp3|ogg|wav)/, loader: 'file' },
         { test: /\.js$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
-        { test: /\.(jpg|png|woff)$/, loader: 'url?limit=10000' },
         { test: /\.json$/, loader: 'json' },
       ],
+    },
+    resolveLoader: {
+      alias: {
+        'svg-icon': 'react-svgdom',
+      },
     },
     plugins: [
       new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
