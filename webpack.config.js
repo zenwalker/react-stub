@@ -33,8 +33,8 @@ configs.global = (dirname) => {
       loaders: [
         { test: /\.svg$/, loader: 'react-svgdom' },
         { test: /\.(jpg|png|ttf|woff|woff2|gif)$/, loader: 'url?limit=10000' },
+        { test: /\.jsx?$/, loaders: ['react-hot-loader/webpack', 'babel'], exclude: /node_modules/ },
         { test: /\.(mp4|webm|ogv|mp3|ogg|wav)/, loader: 'file' },
-        { test: /\.js$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
         { test: /\.json$/, loader: 'json' },
       ],
     },
@@ -57,9 +57,6 @@ configs.global = (dirname) => {
         filename: 'index.html',
         inject: true,
       }),
-    ],
-    postcss: [
-      autoprefixer(),
     ],
     stylus: {
       import: [
@@ -84,6 +81,8 @@ configs.development = () => {
   };
 
   return {
+    devtool: 'eval',
+
     devServer: {
       historyApiFallback: true,
       proxy: proxy.local,
